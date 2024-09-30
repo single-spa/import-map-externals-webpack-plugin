@@ -13,20 +13,18 @@ export class ImportMapExternalsPlugin {
     compiler.hooks.normalModuleFactory.tap(
       "ImportMapExternalsPlugin",
       (nmf) => {
-        nmf.hooks.resolve.tapPromise(
-          {
-            name: "NormalModuleFactory",
-            stage: 100,
-          },
-          async (resolveData: ResolveData) => {
+        nmf.hooks.factorize.tapPromise(
+          "ImportMapExternalsPlugin",
+          async (resolveData) => {
+            const dependency = resolveData.dependencies[0];
             const importMap = await importMapPromise;
-            console.log("request", resolveData.request);
 
             if (
               Object.keys(importMap?.imports || {}).includes(
                 resolveData.request,
               )
             ) {
+              console.log("returning external");
               return new ExternalModule(
                 resolveData.request,
                 compiler.options.output.library?.type || "module",

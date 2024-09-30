@@ -2,7 +2,7 @@
   "name": "import-map-externals-webpack-plugin",
   "version": "1.0.0",
   "description": "Wepback plugin to auto-externalize dependencies available in import-maps",
-  "type": "module",
+  "type": "commonjs",
   "exports": {
     ".": {
       "default": "./lib/import-map-externals-webpack-plugin.js",

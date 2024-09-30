@@ -4,6 +4,7 @@
     "declaration": true,
     "outDir": "lib",
     "lib": ["es2015"],
-    "module": "NodeNext"
+    "module": "CommonJS",
+    "target": "ES2020"
   }
 }

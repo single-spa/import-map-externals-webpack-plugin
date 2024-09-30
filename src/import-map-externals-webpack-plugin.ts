@@ -15,8 +15,7 @@ export class ImportMapExternalsPlugin {
       (nmf) => {
         nmf.hooks.factorize.tapPromise(
           "ImportMapExternalsPlugin",
-          async (resolveData) => {
-            const dependency = resolveData.dependencies[0];
+          async (resolveData: ResolveData) => {
             const importMap = await importMapPromise;
 
             if (
@@ -24,7 +23,6 @@ export class ImportMapExternalsPlugin {
                 resolveData.request,
               )
             ) {
-              console.log("returning external");
               return new ExternalModule(
                 resolveData.request,
                 compiler.options.output.library?.type || "module",

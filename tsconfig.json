@@ -1,0 +1,10 @@
+{
+  "files": ["src/import-map-externals-webpack-plugin.ts"],
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "lib",
+    "lib": ["es2015"],
+    "module": "CommonJS",
+    "target": "ES2020"
+  }
+}

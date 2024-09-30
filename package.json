@@ -1,0 +1,33 @@
+{
+  "name": "import-map-externals-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Wepback plugin to auto-externalize dependencies available in import-maps",
+  "type": "module",
+  "main": "lib/import-map-externals-webpack-plugin.js",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "check-format": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "jest",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Joel Denning",
+  "license": "MIT",
+  "packageManager": "pnpm@9.11.0",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "@jest/globals": "^29.7.0",
+    "@types/webpack": "^5.28.5",
+    "babel-jest": "^29.7.0",
+    "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "jest-cli": "^29.7.0",
+    "prettier": "^3.3.3",
+    "pretty-quick": "^4.0.0",
+    "typescript": "^5.6.2",
+    "webpack": "^5.95.0"
+  }
+}
